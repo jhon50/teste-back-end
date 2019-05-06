@@ -1,0 +1,1637 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "leads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "requests"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "request_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190505165255)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190505034627);
+
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-05-05 19:44:50.153513"], ["updated_at", "2019-05-05 19:44:50.153513"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("request_url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["request_url", "asdasd"], ["created_at", "2019-05-05 19:45:11.975764"], ["updated_at", "2019-05-05 19:45:11.975764"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("request_url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["request_url", "asdasd"], ["created_at", "2019-05-05 19:47:54.786041"], ["updated_at", "2019-05-05 19:47:54.786041"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("request_url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["request_url", "asdasd"], ["created_at", "2019-05-05 19:48:04.805601"], ["updated_at", "2019-05-05 19:48:04.805601"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 19:53:23.632091"], ["updated_at", "2019-05-05 19:53:23.632091"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 19:54:04.297090"], ["updated_at", "2019-05-05 19:54:04.297090"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 19:57:45.408058"], ["updated_at", "2019-05-05 19:57:45.408058"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 19:57:45.427179"], ["updated_at", "2019-05-05 19:57:45.427179"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:07:37.014104"], ["updated_at", "2019-05-05 20:07:37.014104"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:07:37.019674"], ["updated_at", "2019-05-05 20:07:37.019674"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:07:37.031249"], ["updated_at", "2019-05-05 20:07:37.031249"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:15:41.418774"], ["updated_at", "2019-05-05 20:15:41.418774"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:15:41.424389"], ["updated_at", "2019-05-05 20:15:41.424389"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:15:41.436177"], ["updated_at", "2019-05-05 20:15:41.436177"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:16:36.260636"], ["updated_at", "2019-05-05 20:16:36.260636"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:16:36.268905"], ["updated_at", "2019-05-05 20:16:36.268905"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:16:36.278794"], ["updated_at", "2019-05-05 20:16:36.278794"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:16:58.499027"], ["updated_at", "2019-05-05 20:16:58.499027"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:16:58.508036"], ["updated_at", "2019-05-05 20:16:58.508036"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:16:58.519554"], ["updated_at", "2019-05-05 20:16:58.519554"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:17:47.474141"], ["updated_at", "2019-05-05 20:17:47.474141"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:17:47.480533"], ["updated_at", "2019-05-05 20:17:47.480533"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:17:47.489971"], ["updated_at", "2019-05-05 20:17:47.489971"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 147ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:21:51.451659"], ["updated_at", "2019-05-05 20:21:51.451659"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:21:51.456828"], ["updated_at", "2019-05-05 20:21:51.456828"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:21:51.467303"], ["updated_at", "2019-05-05 20:21:51.467303"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:22:19.848402"], ["updated_at", "2019-05-05 20:22:19.848402"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:22:19.853206"], ["updated_at", "2019-05-05 20:22:19.853206"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:22:19.862933"], ["updated_at", "2019-05-05 20:22:19.862933"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:22:45.485906"], ["updated_at", "2019-05-05 20:22:45.485906"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:22:45.492303"], ["updated_at", "2019-05-05 20:22:45.492303"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:22:45.503833"], ["updated_at", "2019-05-05 20:22:45.503833"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:25:09.277389"], ["updated_at", "2019-05-05 20:25:09.277389"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:25:09.282835"], ["updated_at", "2019-05-05 20:25:09.282835"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:25:09.292918"], ["updated_at", "2019-05-05 20:25:09.292918"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:25:42.690961"], ["updated_at", "2019-05-05 20:25:42.690961"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:25:42.696698"], ["updated_at", "2019-05-05 20:25:42.696698"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:25:42.719069"], ["updated_at", "2019-05-05 20:25:42.719069"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:26:01.804403"], ["updated_at", "2019-05-05 20:26:01.804403"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:26:01.812768"], ["updated_at", "2019-05-05 20:26:01.812768"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:26:01.823772"], ["updated_at", "2019-05-05 20:26:01.823772"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:26:20.859993"], ["updated_at", "2019-05-05 20:26:20.859993"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:26:20.869252"], ["updated_at", "2019-05-05 20:26:20.869252"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:26:20.882550"], ["updated_at", "2019-05-05 20:26:20.882550"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:26:33.498776"], ["updated_at", "2019-05-05 20:26:33.498776"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:26:33.507848"], ["updated_at", "2019-05-05 20:26:33.507848"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.8ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:26:33.520466"], ["updated_at", "2019-05-05 20:26:33.520466"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:27:24.041648"], ["updated_at", "2019-05-05 20:27:24.041648"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:27:24.050137"], ["updated_at", "2019-05-05 20:27:24.050137"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:27:24.061088"], ["updated_at", "2019-05-05 20:27:24.061088"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:27:59.174253"], ["updated_at", "2019-05-05 20:27:59.174253"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:27:59.182949"], ["updated_at", "2019-05-05 20:27:59.182949"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:27:59.196151"], ["updated_at", "2019-05-05 20:27:59.196151"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:28:21.852128"], ["updated_at", "2019-05-05 20:28:21.852128"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:28:21.861334"], ["updated_at", "2019-05-05 20:28:21.861334"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:28:21.883513"], ["updated_at", "2019-05-05 20:28:21.883513"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:31:17.410558"], ["updated_at", "2019-05-05 20:31:17.410558"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:31:17.418925"], ["updated_at", "2019-05-05 20:31:17.418925"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:31:17.429040"], ["updated_at", "2019-05-05 20:31:17.429040"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.6ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:32:50.536221"], ["updated_at", "2019-05-05 20:32:50.536221"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:32:50.541807"], ["updated_at", "2019-05-05 20:32:50.541807"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:32:50.551575"], ["updated_at", "2019-05-05 20:32:50.551575"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] Enqueued RequestWorker (Job ID: 7e586b79-c29a-41b7-bd95-ba6232ef8db9) to Test(default) with arguments: {:request_url=>"asdasd"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:37:00.813980"], ["updated_at", "2019-05-05 20:37:00.813980"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:37:00.818694"], ["updated_at", "2019-05-05 20:37:00.818694"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:37:00.828373"], ["updated_at", "2019-05-05 20:37:00.828373"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] Enqueued RequestJob (Job ID: 9ad4e57d-629e-4773-a73d-cb046a4d4f96) to Test(default) with arguments: {:request_url=>"asdasd"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:48:07.571348"], ["updated_at", "2019-05-05 20:48:07.571348"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] Enqueued RequestJob (Job ID: 03d42f4b-a297-4f5f-9f01-96a18ba6a63c) to Test(default) with arguments: {:request_url=>"asdasd"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:48:54.098765"], ["updated_at", "2019-05-05 20:48:54.098765"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:48:54.103873"], ["updated_at", "2019-05-05 20:48:54.103873"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:48:54.114880"], ["updated_at", "2019-05-05 20:48:54.114880"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] Enqueued RequestJob (Job ID: 2a10ba43-2b6b-42cb-8ebd-751c4cbaa1cf) to Test(default) with arguments: {:request_url=>"asdasd"}
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:52:31.918936"], ["updated_at", "2019-05-05 20:52:31.918936"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:52:31.928037"], ["updated_at", "2019-05-05 20:52:31.928037"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:52:31.938476"], ["updated_at", "2019-05-05 20:52:31.938476"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:52:46.411607"], ["updated_at", "2019-05-05 20:52:46.411607"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:52:46.420728"], ["updated_at", "2019-05-05 20:52:46.420728"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:52:46.432120"], ["updated_at", "2019-05-05 20:52:46.432120"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 021df35b-f311-470e-a6ef-c323eb1dccc8) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 138ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:53:18.777097"], ["updated_at", "2019-05-05 20:53:18.777097"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:53:18.785535"], ["updated_at", "2019-05-05 20:53:18.785535"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:53:18.795351"], ["updated_at", "2019-05-05 20:53:18.795351"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 9563fbb8-6384-4c7b-99e6-8c0a6e238a24) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 141ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: b79ccb74-6a0b-4519-b549-10d7388a518f) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 76ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.6ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:54:34.928665"], ["updated_at", "2019-05-05 20:54:34.928665"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:54:34.935482"], ["updated_at", "2019-05-05 20:54:34.935482"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:54:34.945706"], ["updated_at", "2019-05-05 20:54:34.945706"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 43c7897d-42b5-4f49-81d4-96fd4df890f3) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 129ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 9a28f9a6-9f1a-4e72-bb1b-e9e54d472a75) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 69ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:58:53.340207"], ["updated_at", "2019-05-05 20:58:53.340207"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:58:53.346934"], ["updated_at", "2019-05-05 20:58:53.346934"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.8ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:58:53.363774"], ["updated_at", "2019-05-05 20:58:53.363774"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 9b030c50-d0df-45cf-ad4e-92bccab2ddf7) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: b31fb7da-7a72-46c5-b926-ba0aebd05bef) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.6ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:59:03.412952"], ["updated_at", "2019-05-05 20:59:03.412952"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:59:03.421915"], ["updated_at", "2019-05-05 20:59:03.421915"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:59:03.433961"], ["updated_at", "2019-05-05 20:59:03.433961"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: c4f92a11-d5f9-4c1f-8890-7f51c7c6bede) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 151ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 51dfcf74-1b93-4d9a-8062-96e323596097) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:59:13.390596"], ["updated_at", "2019-05-05 20:59:13.390596"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:59:13.398912"], ["updated_at", "2019-05-05 20:59:13.398912"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:59:13.409116"], ["updated_at", "2019-05-05 20:59:13.409116"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 8e3c801b-7cee-4af3-9164-4b0d10fca44e) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 139ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: efa93507-531a-4991-8265-c17042bd9983) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 79ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:59:22.894195"], ["updated_at", "2019-05-05 20:59:22.894195"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 20:59:22.900887"], ["updated_at", "2019-05-05 20:59:22.900887"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 20:59:22.921457"], ["updated_at", "2019-05-05 20:59:22.921457"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 7e459c8f-f625-46ee-be6b-2835691e0e2d) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 144ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 40d75930-fdc2-4bde-8172-cf24e24b5489) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 74ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:00:57.976305"], ["updated_at", "2019-05-05 21:00:57.976305"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:00:57.982622"], ["updated_at", "2019-05-05 21:00:57.982622"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:00:57.993097"], ["updated_at", "2019-05-05 21:00:57.993097"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: efc54c4f-7e2b-48a3-ac49-66bd1aa24ae7) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 139ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 8fc6bbd7-1bf0-4748-8054-b150943878b3) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 67ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:02:20.928172"], ["updated_at", "2019-05-05 21:02:20.928172"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:02:20.934557"], ["updated_at", "2019-05-05 21:02:20.934557"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:02:20.955596"], ["updated_at", "2019-05-05 21:02:20.955596"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: f5ac058f-5849-4fe8-bf21-d4c334a5be48) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 139ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: d854a7e7-b04e-4725-ba51-70dde360ad50) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:03:09.260345"], ["updated_at", "2019-05-05 21:03:09.260345"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:03:09.269001"], ["updated_at", "2019-05-05 21:03:09.269001"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:03:09.284390"], ["updated_at", "2019-05-05 21:03:09.284390"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: b5bfb2d7-7f91-4b9e-8029-665100769609) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 142ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 93cbfc26-a1bf-49d1-bd06-a17b3625f432) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:03:39.597148"], ["updated_at", "2019-05-05 21:03:39.597148"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:03:39.605727"], ["updated_at", "2019-05-05 21:03:39.605727"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:03:39.615764"], ["updated_at", "2019-05-05 21:03:39.615764"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 677d3f48-1f19-4b7f-99c1-cfdb6382fc77) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 141ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: feaf1448-71a9-4657-b423-87aafa9bc389) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 71ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:04:17.748024"], ["updated_at", "2019-05-05 21:04:17.748024"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.3ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:04:17.754404"], ["updated_at", "2019-05-05 21:04:17.754404"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:04:17.765347"], ["updated_at", "2019-05-05 21:04:17.765347"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:04:17.774415"], ["updated_at", "2019-05-05 21:04:17.774415"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.2ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:04:17.776469"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 2f91e97c-c2d0-4cfe-ac76-8a423fc71595) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: c4f75ba9-f717-4b06-8693-a5db455310f0) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 70ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.6ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:06:08.715496"], ["updated_at", "2019-05-05 21:06:08.715496"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:06:08.722983"], ["updated_at", "2019-05-05 21:06:08.722983"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:06:08.736875"], ["updated_at", "2019-05-05 21:06:08.736875"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:06:08.756707"], ["updated_at", "2019-05-05 21:06:08.756707"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:06:08.758297"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.1ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:06:08.777805"], ["updated_at", "2019-05-05 21:06:08.777805"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:06:08.779264"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 6c988ec6-4163-4fd8-9fa8-542170d9a71e) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 237ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: da21ac3a-c2d2-4943-a72b-12ab5c2d501d) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:17:59.040218"], ["updated_at", "2019-05-05 21:17:59.040218"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:17:59.048636"], ["updated_at", "2019-05-05 21:17:59.048636"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:17:59.060411"], ["updated_at", "2019-05-05 21:17:59.060411"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:17:59.077851"], ["updated_at", "2019-05-05 21:17:59.077851"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:17:59.080037"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 9314d3bd-a75c-4686-b619-a9fec4442ae9) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 240ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: d5af0b29-8ca4-402e-bfa2-7cc6e4293ecf) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 71ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:18:36.144463"], ["updated_at", "2019-05-05 21:18:36.144463"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:18:36.154131"], ["updated_at", "2019-05-05 21:18:36.154131"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.9ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:18:36.172841"], ["updated_at", "2019-05-05 21:18:36.172841"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:18:36.195743"], ["updated_at", "2019-05-05 21:18:36.195743"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:18:36.197312"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 94d068dc-9dea-4f5c-a34f-443d81ac4315) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 237ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: b833501d-5b02-4845-81f7-af2a0d6a25c2) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 72ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:19:00.318120"], ["updated_at", "2019-05-05 21:19:00.318120"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:19:00.326672"], ["updated_at", "2019-05-05 21:19:00.326672"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:19:00.337760"], ["updated_at", "2019-05-05 21:19:00.337760"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:19:00.354692"], ["updated_at", "2019-05-05 21:19:00.354692"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:19:00.356283"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 9c25fab5-da3e-4745-86ff-157f0f854564) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 154ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: e729dfd9-1e1c-4c1f-836f-9c777b8390dc) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 71ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:40:25.916502"], ["updated_at", "2019-05-05 21:40:25.916502"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 21:40:25.922875"], ["updated_at", "2019-05-05 21:40:25.922875"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 21:40:25.932949"], ["updated_at", "2019-05-05 21:40:25.932949"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 21:40:25.951901"], ["updated_at", "2019-05-05 21:40:25.951901"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 21:40:25.953493"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "leads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "requests"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "request_url" varchar, "new_lead" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190505165255)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190505034627);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-05-05 22:27:43.041799"], ["updated_at", "2019-05-05 22:27:43.041799"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 9c0a0a1b-f0c2-441c-beaf-2b73d609a8a2) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: c8c3b536-51e5-448e-8b8e-f6aa68784a38) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 100ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 22:27:43.393936"], ["updated_at", "2019-05-05 22:27:43.393936"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-05 22:27:43.404490"], ["updated_at", "2019-05-05 22:27:43.404490"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-05 22:27:43.424507"], ["updated_at", "2019-05-05 22:27:43.424507"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-05 22:27:43.450126"], ["updated_at", "2019-05-05 22:27:43.450126"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.3ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-05 22:27:43.451809"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "leads" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "requests"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "uuid" varchar, "request_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190505165255)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190505034627);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-05-06 01:09:24.420872"], ["updated_at", "2019-05-06 01:09:24.420872"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by LeadsController#create as HTML
+  Parameters: {"email"=>"johndoe@gmail.com", "name"=>"John Doe"}
+[ActiveJob] Enqueued LeadJob (Job ID: 3e843fd7-5464-43b5-a501-0a86dfea8676) to Test(default) with arguments: {"name"=>"John Doe", "email"=>"johndoe@gmail.com"}
+No template found for LeadsController#create, rendering head :no_content
+Completed 204 No Content in 146ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by RequestsController#create as HTML
+  Parameters: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+[ActiveJob] Enqueued RequestJob (Job ID: 8aac095c-a5fa-4489-b76d-08bca261838f) to Test(default) with arguments: {"request_url"=>"/test", "uuid"=>"1231241-asdasd-2344"}
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 103ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-06 01:09:24.827884"], ["updated_at", "2019-05-06 01:09:24.827884"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "johndoe@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLead Create (0.4ms)[0m  [1m[32mINSERT INTO "leads" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "John"], ["email", "johndoe@gmail.com"], ["created_at", "2019-05-06 01:09:24.833089"], ["updated_at", "2019-05-06 01:09:24.833089"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "leads"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("uuid", "request_url", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["uuid", "1231241-asdas-434"], ["request_url", "asdasd"], ["created_at", "2019-05-06 01:09:24.848021"], ["updated_at", "2019-05-06 01:09:24.848021"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "requests"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLead Load (0.2ms)[0m  [1m[34mSELECT  "leads".* FROM "leads" ORDER BY "leads"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Create (0.5ms)[0m  [1m[32mINSERT INTO "leads" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-05-06 01:09:24.870614"], ["updated_at", "2019-05-06 01:09:24.870614"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLead Update (0.1ms)[0m  [1m[33mUPDATE "leads" SET "email" = ?, "updated_at" = ? WHERE "leads"."id" = ?[0m  [["email", "dummy value"], ["updated_at", "2019-05-06 01:09:24.872388"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mLead Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "dummy value"], ["LIMIT", 1]]
+  [1m[36mLead Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "leads" WHERE "leads"."email" = ? LIMIT ?[0m  [["email", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m

@@ -1,0 +1,16 @@
+<h1>Relatório de Acessos</h1>
+
+<table>
+  <tr>
+    <th>User GUID</th>
+    <th>Page Accessed</th>
+    <th>Data Criação</th>
+  </tr>
+  <% @requests.each do |request| %>
+    <tr>
+      <td><%= request.uuid %></td>
+      <td><%= request.page_accessed %></td>
+      <td><%= request.created_at.strftime('%d/%m  %H:%M:%S') %></td>
+    </tr>
+  <% end %>
+</table>
