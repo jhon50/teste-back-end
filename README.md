@@ -1,58 +1,34 @@
-# Teste iCasei: Back-end
-Desenvolver uma aplicação de Rastreamento de usuários
+User Tracking
+This is a small service that receives requests from clients that are using tracker.js lib.
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Siga as especificações abaixo.
-- Crie um README em inglês que explique como rodar localmente a aplicação (iremos testar e rodar a aplicação a partir desse manual, inclusive criação de base de dados)
-- Devem existir testes automatizados. Quanto mais bem testada a aplicação, melhor.
-- O link do repositório deverá ser enviado para o e-mail backend@icasei.com.br com o título **Teste Back-End Developer**
+Unique page hits are being mapped into Request, and when someone register their email and name, it will become a Lead.
 
-## Especificações tecnicas
-- Desenvolver uma aplicação usando Ruby on Rails que contenha uma lista de contatos. Deve obrigatoriamente conter o campo **email** e **nome**.
-- Desenvolver uma biblioteca em JavaScript que quando incluída no site do cliente envie as seguintes informações para a sua aplicação:
-  - Identificador único do visitante (GUID) (Usar cookies ou local storage) 
-  - URL acessada
-  - Data/hora do acesso
-- Criar um site de exemplo contendo pelo menos 3 páginas utilizando a biblioteca JS desenvolvida
-- O site de exemplo deve conter uma página de contato com um formulário que envie o contato para sua aplicação. Esse formulário deve ter os campos “nome” e "email" onde “email” servirá como identificador único do contato.
-- Deverá haver uma página que mostre um relatório de rastreamento  dos últimos 50 acessos rastreados ordenados em ordem decrescente por data de inserção.
+Application Requirements
+Rails 5.2
+Ruby 2.4.6
+Redis configured in default port (6379)
+Prepare application
+Install gems
 
-## Espera-se que funcione da seguinte forma:
-- O visitante "A" acessa a página "Home" da sua página de exemplo.
-- O visitante "A" acessa a página de "Sobre" da sua página de exemplo.
-- O visitante "B" acessa a página "Home" da sua página de exemplo.
-- O visitante "B" acessa a página "Contato" da sua página de exemplo.
-- O visitante "B" preenche o formulário e confirma.
-- É criado um contato em sua aplicação para o Visitante "B".
-- Ao acessar a página de relatório na aplicação é possível ver as seguintes páginas:
-  - Visitante A | Home | Data/Hora
-  - Visitante A | Sobre | Data/Hora
-  - Visitante B | Home | Data/Hora
-  - Visitante B | Contato | Data/Hora
-- O visitante "A" acessa a página "Contato" da sua página de exemplo.
-- O visitante "A" preenche o formulário e confirma.
-- É criado um contato em sua aplicação para o Visitante "A".
-- Ao acessar a página de relatório na aplicação é possível ver as seguintes páginas:
-  - Visitante A | Home | Data/Hora
-  - Visitante A | Sobre | Data/Hora
-  - Visitante B | Home | Data/Hora
-  - Visitante B | Contato | Data/Hora
-  - Visitante A | Contato | Data/Hora
-- O visitante "B" acessa a página "Sobre" da página de exemplo.
-- Ao acessar a página de relatório na aplicação é possível ver as seguintes páginas:
-  - Visitante A | Home | Data/Hora
-  - Visitante A | Sobre | Data/Hora
-  - Visitante B | Home | Data/Hora
-  - Visitante B | Contato | Data/Hora
-  - Visitante A | Contato | Data/Hora
-  - Visitante B | Sobre | Data/Hora
-  
-Fique atento a problemas de performance e concorrência em uma grande quantidade de requisições. Caso julgue necessário o desenvolvimento de outras bibliotecas ou serviços, pode utilizar a tecnologia que quiser.
+bundle install
 
-## O que será avaliado?
-- Organização do projeto
-- Lógica do código
-- Uso do Git
-- Uso de componentização
-- Testes automatizados
+Create database
+
+rake db:create db:migrate
+
+How To Execute
+This application is using foreman as default to launch everything you might need. Edit Procfile or use commands individually if you want.
+
+run: foreman start -f Procfile.env
+
+Notes:
+
+if you have Redis already running, remove it from Procfile
+if you change default port, remember to change it in tracker.js ENDPOINT, this is only for localhost testing.
+client: Open index.html located in the root folder, this is a simple page just to simulate that the script works anywhere.
+
+reports: You can see requests and page hits by running rails server and accessing /requests route.
+
+tests: bundle exec rspec spec
+
+IMPORTANT: In order to test this application from a client in localhost it is necessary to install Google Chrome/Firefox CORS extension, or add CORS to request Header to prevent further security errors.
